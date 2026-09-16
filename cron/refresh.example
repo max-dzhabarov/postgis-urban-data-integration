@@ -1,0 +1,3 @@
+# Run every 30 minutes. Keep credentials outside this file, for example in
+# a protected service environment or a .pgpass file.
+*/30 * * * * psql "$AGR_DEMO_DSN" -v ON_ERROR_STOP=1 -f /opt/agr-demo/sql/04_refresh.sql >> /var/log/agr-demo-refresh.log 2>&1
